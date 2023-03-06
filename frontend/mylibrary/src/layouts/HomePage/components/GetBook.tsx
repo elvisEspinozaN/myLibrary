@@ -3,7 +3,7 @@ export const GetBook = () => {
     <div className="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-3">
       <div className="text-center">
         <img
-          src={require("./../../Images/BookImages/a-book.png")}
+          src={require("./../../../Images/BookImages/a-book.png")}
           alt="book"
           width="151"
           height="233"
