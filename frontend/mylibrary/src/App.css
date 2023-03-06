@@ -1,8 +1,8 @@
 :root {
   --mainOpacity: rgba(0, 0, 0, 0.55);
-  --primary-color: #2e2e2e;
-  --secondary-color: #ffffff;
-  --accent-color: #5f9ea0;
+  --primary-color: #2d3e50;
+  --secondary-color: #f5a623;
+  --accent-color: #5cb85c;
 }
 
 .header {
@@ -23,6 +23,10 @@
 
 .main-color {
   background-color: var(--primary-color);
+}
+
+.secondary-color {
+  background-color: var(--secondary-color);
 }
 
 .col-image-left {
