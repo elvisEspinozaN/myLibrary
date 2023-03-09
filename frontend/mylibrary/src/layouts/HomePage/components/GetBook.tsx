@@ -1,10 +1,9 @@
 import BookModel from "../../../models/BookModel";
 
 const images = ["a-book.png", "a-brown-book.png", "a-red-book.png"];
+const randomIndex = Math.floor(Math.random() * images.length);
 
 export const GetBook: React.FC<{ book: BookModel }> = (props) => {
-  const randomIndex = Math.floor(Math.random() * images.length);
-
   return (
     <div className="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-3">
       <div className="text-center">

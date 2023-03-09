@@ -1,14 +1,13 @@
 import { GetBook } from "./GetBook";
 import { useEffect, useState } from "react";
 import BookModel from "../../../models/BookModel";
+import { SpinnerLoading } from "../../Utils/SpinnerLoading";
 
 export const Carousel = () => {
   // array of BookModel objects
   const [books, setBooks] = useState<BookModel[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [httpError, setHttpError] = useState(null);
-
-  const randomNumber = Math.ceil(Math.random() * 26);
 
   // used to fetch books from API
   useEffect(() => {
@@ -21,7 +20,7 @@ export const Carousel = () => {
 
       // if fetch is unsuccesful, function throws an error
       if (!response.ok) {
-        throw new Error("Something went wrong");
+        throw new Error("Something went wrong.");
       }
 
       // extracts JSON data from response
@@ -55,11 +54,7 @@ export const Carousel = () => {
   }, []);
 
   if (isLoading) {
-    return (
-      <div className="container m-5">
-        <p>Loading...</p>
-      </div>
-    );
+    return <SpinnerLoading />;
   }
 
   if (httpError) {
@@ -133,7 +128,7 @@ export const Carousel = () => {
       {/* Mobile */}
       <div className="d-lg-none mt-3">
         <div className="row d-flex justify-content-center align-item-center">
-          <GetBook book={books[randomNumber]} key={books[randomNumber].id} />
+          <GetBook book={books[7]} key={books[7].id} />
         </div>
       </div>
       <div className="homepage-carousel-title mt-3">
